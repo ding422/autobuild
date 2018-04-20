@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 
-public class AutoBuild
+public static class AutoBuild
 {
     private const string ANDROID_SDK = "ANDROID_SDK";
     private const string AndroidSdkRoot = "AndroidSdkRoot";
