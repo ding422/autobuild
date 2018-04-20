@@ -205,7 +205,7 @@ public static class AutoBuild
 
         EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroup, buildTarget);
 
-        string result = buildPlayerOptions.locationPathName + ": " + BuildPipeline.BuildPlayer(buildPlayerOptions);
+        string result = BuildPipeline.BuildPlayer(buildPlayerOptions);
         Debug.Log(result);
         if (UnityEditorInternal.InternalEditorUtility.inBatchMode)
         {
