@@ -12,7 +12,7 @@ public class AutoBuild
 
     private const string OUTPUT_PATH_KEY = "-output";
     private static string OUTPUT_PATH_VALUE = ".\\Build";
-    private const string BUILD_TARGET_KEY = "-buildTarget";
+    private const string BUILD_TARGET_KEY = "-buildType";
     private static string BUILD_TARGET_VALUE = null;
 
     public static void SetBuildSetting()
