@@ -11,7 +11,7 @@ public class AutoBuild
     private const string AndroidNdkRoot = "AndroidNdkRoot";
 
     private const string OUTPUT_PATH_KEY = "-output";
-    private static string OUTPUT_PATH_VALUE = "./Build";
+    private static string OUTPUT_PATH_VALUE = ".\\Build";
     private const string BUILD_TARGET_KEY = "-buildTarget";
     private static string BUILD_TARGET_VALUE = null;
 
@@ -187,7 +187,7 @@ public class AutoBuild
 
         BuildTargetGroup targetGroup = GetBuildTargetGroup(buildTarget);
 
-        string path = Path.Combine(Path.Combine(OUTPUT_PATH_VALUE, targetGroup.ToString()), PlayerSettings.productName + "_" + System.DateTime.Now.ToString("dd.MM.yyyy_HH") + "h" + System.DateTime.Now.ToString("mm") + "_" + buildTarget);
+        string path = Path.Combine(Path.Combine(OUTPUT_PATH_VALUE, targetGroup.ToString()), PlayerSettings.productName + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH") + "h" + System.DateTime.Now.ToString("mm") + "_" + buildTarget);
         string name = PlayerSettings.productName + GetExtension(buildTarget);
 
 
@@ -207,7 +207,7 @@ public class AutoBuild
 
         string result = buildPlayerOptions.locationPathName + ": " + BuildPipeline.BuildPlayer(buildPlayerOptions);
         Debug.Log(result);
-        if (!UnityEditorInternal.InternalEditorUtility.inBatchMode)
+        if (UnityEditorInternal.InternalEditorUtility.inBatchMode)
         {
             if (!string.IsNullOrEmpty(result))
             {
@@ -229,6 +229,7 @@ public class AutoBuild
         DefaultBuild(BuildTarget.Android);
     }
 
+    [MenuItem("AutoBuild/BatchmodeBuild")]
     public static void BatchmodeBuild()
     {
         SetBuildSetting();
