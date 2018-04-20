@@ -68,7 +68,7 @@ public static class AutoBuild
     {
         switch (buildTarget)
         {
-            case BuildTarget.StandaloneOSX:
+            //case BuildTarget.StandaloneOSX:
             case BuildTarget.iOS:
                 return BuildTargetGroup.iOS;
             case BuildTarget.StandaloneWindows:
@@ -111,8 +111,8 @@ public static class AutoBuild
     {
         switch (buildTarget)
         {
-            case BuildTarget.StandaloneOSX:
-                break;
+            //case BuildTarget.StandaloneOSX:
+                //break;
             case BuildTarget.StandaloneWindows:
             case BuildTarget.StandaloneWindows64:
                 return ".exe";
